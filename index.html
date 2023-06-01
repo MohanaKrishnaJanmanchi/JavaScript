@@ -1,0 +1,32 @@
+<html>
+    <head>06-01-2023</head>
+        <body>
+            <script>
+                let environment = 'Test';
+                let sendingAmount = 100;
+
+                if (typeof(sendingAmount) == "number" && sendingAmount > 0){
+                if (environment.toLowerCase() == 'dev'){
+                    sendingAmount = 1.10 *  sendingAmount;
+                }
+                else if (environment.toLowerCase() == 'test'){
+                    sendingAmount = 1.2 *  sendingAmount;
+                }
+                else if (environment.toLowerCase() == 'stage'){
+                    sendingAmount = 1.3 *  sendingAmount;
+                }
+                else if (environment.toLowerCase() == 'prod'){
+                    sendingAmount = 1.05 *  sendingAmount;
+                }
+                else{
+                    throw new Error('Enter a Valid Environment'); 
+                }
+                console.log(sendingAmount.toFixed(2));
+            }
+            else{
+                console.log("Invalid Amount")
+            }
+                
+            </script>
+        </body>
+</html>
