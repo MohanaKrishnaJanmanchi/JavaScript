@@ -1,0 +1,64 @@
+<html>
+<style>
+    #image {
+        width: 200px;
+          height: 200px;
+          border-radius: 50%;
+        }
+</style>
+<script>
+    var myProfile = {
+        FName : 'Mohana Krishna',
+        Lname : 'Janmanchi',
+        Ph: "2135467899",
+        email: 'jm@krishna.com',
+        address: "6719 Schneider Ave, Hammond, IN",
+        secondoryNumber: "2198056522",
+        qualification: "Masters in Computer Science",
+        Country: "United States",
+        git: "google.com" ,
+        hobbies: ['GYM','Reading Books', 'Lying'],
+
+    };
+   var img_src = "MohanaKrishna.jpg"
+    var LastHobby = myProfile.hobbies.length-1
+    console.log(myProfile.hobbies[LastHobby])
+
+  </script>
+<body>
+
+<h1>My Profile</h1>
+
+<img id = "image" src="" alt="profile pic">
+<p>
+    <p>First Name: <span id="fname"></span></p>
+    <p>Last Name: <span id="lname"></span></p>
+    <p>Phone: <span id="phone"></span></p>
+    <p>Email: <span id="email"></span></p>
+    <p>Address: <span id="address"></span></p>
+    <p>Secondary Number: <span id="secondary"></span></p>
+    <p>Qualification: <span id="qualification"></span></p>
+    <p>Country: <span id="country"></span></p>
+    <p>Git: <span id="git"></span></p>
+    <p>Hobbies: <span id="hobbies"></span></p>
+</p>
+<script>
+    document.getElementById("image").src = "MohanaKrishna.jpg";
+    document.getElementById("fname").innerHTML = myProfile.FName;
+    document.getElementById("lname").innerHTML = myProfile.Lname;
+    document.getElementById("phone").innerHTML = myProfile.Ph;
+    document.getElementById("email").innerHTML = myProfile.email;
+    document.getElementById("address").innerHTML = myProfile.address;
+    document.getElementById("secondary").innerHTML = myProfile.secondoryNumber;
+    document.getElementById("qualification").innerHTML = myProfile.qualification;
+    document.getElementById("country").innerHTML = myProfile.Country;
+    document.getElementById("git").innerHTML = myProfile.git;
+    
+   
+    document.getElementById("hobbies").innerHTML = myProfile.hobbies.join(", ");
+  </script>
+    
+    
+
+</body>
+</html>
