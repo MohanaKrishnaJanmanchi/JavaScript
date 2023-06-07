@@ -1,0 +1,76 @@
+<html>
+<head>
+  <title>Profile Information</title>
+</head>
+<body>
+  <h1>Profile Information</h1>
+  <form id="Profile">
+    <label>First Name:</label>
+    <input type="text" id="firstName" required><br><br>
+  
+    <label>Last Name:</label>
+    <input type="text" id="lastName" required><br><br>
+
+    <label>Gender:</label>
+    <input type = "text" id = "gender" required><br><br>
+  
+    <label>Email:</label>
+    <input type="email" id="email" required><br><br>
+    
+    <label>Phone Number:</label>
+    <input type="tel" id="phoneNumber" required><br><br>
+
+    <label>Hobbies:</label><br>
+    <input type = "checkbox" id = "Singing"><label>Singing</label><br>
+    <input type = "checkbox" id = "Imitating"><label>Imitating</label><br>
+    <input type = "checkbox" id = "Marketing"><label>Marketing</label><br>
+    <input type = "checkbox" id = "Chess"><label>Chess</label><br>
+    <input type = "checkbox" id = "Talking with Dolphins"><label>Talking with Dolphins</label><br><br>
+    
+    <label>Date of Birth:</label>
+    <input type="date" id="dob" required><br><br>
+  
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>Profile Details:</h2>
+  <div id="profileDetails"></div>
+  
+
+  <script>
+    document.getElementById("Profile").addEventListener("submit", function(event) {
+      event.preventDefault();
+      displayProfileDetails();
+    });
+
+    function displayProfileDetails() {
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      var dob = document.getElementById("dob").value;
+      var email = document.getElementById("email").value;
+      var phoneNumber = document.getElementById("phoneNumber").value;
+      var hobbies = getCheckedCheckboxes(Profile);
+
+      var profileDetails = document.getElementById("profileDetails");
+      profileDetails.innerHTML = "<p><strong>First Name:</strong> " + firstName + "</p>" +
+                                "<p><strong>Last Name:</strong> " + lastName + "</p>" +
+                                "<p><strong>Date of Birth:</strong> " + dob + "</p>" +
+                                "<p><strong>Email:</strong> " + email + "</p>" +
+                                "<p><strong>Phone Number:</strong> " + phoneNumber + "</p>" + 
+                                "<p><strong>Hobbies:</strong> " + hobbies + "</p>";
+
+    }
+
+    function getCheckedCheckboxes(form) {
+        var checkboxes = form.getElementsByTagName("input");
+        var checkedCheckboxes = [];
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].type == "checkbox" && checkboxes[i].checked) {
+            checkedCheckboxes.push(checkboxes[i].id);
+    }
+  }
+  return checkedCheckboxes;
+} 
+  </script>
+</body>
+</html>
