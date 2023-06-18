@@ -1,0 +1,25 @@
+<form action="action_page.php" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <input type="text" placeholder="First Name" name="First Name" [(ngModel)]="signupObj.firstName" required>
+    
+    <input type="text" placeholder="Last Name" name="Last Name" [(ngModel)]="signupObj.lastName" required>
+    
+    <input type="text" placeholder="Enter Email" name="email" [(ngModel)]="signupObj.email" required>
+
+    <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="signupObj.pwd" required>
+
+    <input type="tel" placeholder="Phone" name="Phone" [(ngModel)]="signupObj.phone" required>
+
+    <label for="DOB"><b>Date of Birth</b></label>
+    <input type="Date" placeholder="Enter Date of Birth" name="DOB" [(ngModel)]="signupObj.dob" required>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn" (click)= "onCancel()">Cancel</button>
+      <button type="submit" class="signupbtn" (click)= "onSignUp()">Sign Up</button>
+    </div>
+  </div>
+</form>
